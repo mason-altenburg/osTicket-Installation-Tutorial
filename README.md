@@ -39,7 +39,7 @@ Welcome to my first in-depth IT tutorial! To begin we will have to create a Virt
 
 
 2️⃣ **Install Visual C++ Redistributable**  
-   - Run `VC_redist.x86.exe` → Accept license → Install → Finish
+   - Run `(https://aka.ms/vs/17/release/vc_redist.x86.exe)` → Accept license → Install → Finish
 
 3️⃣ **Install & Configure MySQL 5.5**  
    - Run `mysql-5.5.62-win32.msi` → Typical → Next  
