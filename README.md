@@ -16,7 +16,7 @@
 ---
 
 ## List of Prerequisites
-- Visual C++ Redistributable (`VC_redist.x86.exe`)
+- Visual C++ Redistributable (`(https://aka.ms/vs/17/release/vc_redist.x86.exe)`)
 - MySQL Server 5.5 (`mysql-5.5.62-win32.msi`)
 - PHP 7.3 ZIP (`php-7.3.8-Win32-VC15-x86.zip`)
 - PHP Manager for IIS (`PHPManagerForIIS.msi`)
