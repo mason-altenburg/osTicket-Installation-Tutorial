@@ -1,58 +1,85 @@
 ![image](https://github.com/user-attachments/assets/eef745f8-7011-47c5-aff3-4a3f05f59e70)
 
-# osTicket-Installation-Tutorial
-This tutorial outlines the prerequisites and installation of the open-source help desk ticketing system osTicket.
+# osTicket – Prerequisites & Installation
 
-# osTicket - Prerequisites and Installation
-
-## Environments and Technologies Used
-- **Cloud Platform:** Microsoft Azure (Virtual Machines/Compute)
-- **Remote Access:** Microsoft Remote Desktop (RDP)
-- **Web Server:** Internet Information Services (IIS)
-- **Operating System:** Windows 10
-- **Tools:** Heidi SQL, osTicket Installation Files
-
-## List of Prerequisites
-- Azure Virtual Machine
-- osTicket Installation files
-- Heidi SQL
-
-## Installation Steps
-
-### Step 1: Create a Virtual Machine
-Welcome to my first in-depth IT tutorial!  
-1. Create a resource group named **"osTicket"** on [portal.azure.com](https://portal.azure.com).
-2. Create a VM with 2-4 CPUs (this example uses 4 CPUs).
-3. Connect to your VM via RDP using its public IPv4 address.  
-*For Mac users, download Microsoft Remote Desktop (RDP).*
-
-![Connecting to VM](images/rdp-connection.png)
-
-### Step 2: Enable IIS
-1. Access the Control Panel, select **"Turn Windows features on or off"**.
-2. Enable **Internet Information Services (IIS)**.
-
-![Enable IIS](images/enable-iis.png)
-
-### Step 3: Install Web Platform Installer
-1. Download and install the Web Platform Installer from [this link](https://drive.google.com/drive/u/0/folders/1APMfNyfNzcxZC6EzdaNfdZsUwxWYChf6).
-
-![Install Web Platform Installer](images/web-platform-installer.png)
-
-### Step 4: Install Dependencies via Web Platform Installer
-1. Install **MySQL 5.5**.
-2. Install **x86 version of PHP** (up until 7.3).  
-   - Note: Some files like the C++ redistributable package, PHP 7.3.8, and PHP Manager for IIS may show as failed and can be re-downloaded from the provided link.
-
-...
-
-*Continue with the rest of the tutorial content as provided...*
-
-## Post-Installation Setup
-- **Clean Up:** Delete `C:\inetpub\wwwroot\osTicket\setup` and set the permissions for `ost-config.php` to "Read" only.
-- **Access Admin Panel:** Login to the osTicket Admin Panel at `http://localhost/osTicket/scp/login.php`.
+This tutorial follows the original format, with screenshots only at key verification points.
 
 ---
 
-Congratulations, if everything is installed correctly, osTicket should now be up and running on your Azure VM!
+## Environments & Technologies Used
+- Microsoft Azure VM (Windows 10 Enterprise)
+- Internet Information Services (IIS)
+- MySQL Server 5.5
+- PHP 7.3
+- PHP Manager for IIS
+- IIS URL Rewrite
+
+---
+
+## List of Prerequisites
+- Visual C++ Redistributable (`VC_redist.x86.exe`)
+- MySQL Server 5.5 (`mysql-5.5.62-win32.msi`)
+- PHP 7.3 ZIP (`php-7.3.8-Win32-VC15-x86.zip`)
+- PHP Manager for IIS (`PHPManagerForIIS.msi`)
+- IIS URL Rewrite (`rewrite_amd64_*.exe`)
+- osTicket v1.15.8 ZIP
+
+---
+
+## Installation Steps
+
+1️⃣ **Enable IIS**  
+   - Control Panel → Programs → Turn Windows features on or off  
+   - Check **Internet Information Services** → OK  
+   ![Windows Features with IIS enabled](images/enable-iis.png)
+
+2️⃣ **Install Visual C++ Redistributable**  
+   - Run `VC_redist.x86.exe` → Accept license → Install → Finish
+
+3️⃣ **Install & Configure MySQL 5.5**  
+   - Run `mysql-5.5.62-win32.msi` → Typical → Next  
+   - Configuration Wizard:  
+     - Standard Configuration → Developer Machine  
+     - Enable TCP/IP (port 3306)  
+     - Install as Windows service → Start automatically  
+     - Root password = **Password1** → Remove anonymous → Disallow remote root  
+     - Execute → Finish  
+   ![MySQL Configuration Complete](images/mysql-config.png)
+
+4️⃣ **Install PHP 7.3**  
+   - Extract `php-7.3.8-Win32-VC15-x86.zip` to `C:\php`  
+   - Rename `php.ini-development` → `php.ini`  
+   ![C:\php folder contents](images/php-folder.png)
+
+5️⃣ **Install PHP Manager for IIS**  
+   - Run `PHPManagerForIIS.msi` → Next → Finish
+
+6️⃣ **Install IIS URL Rewrite**  
+   - Run `rewrite_amd64_*.exe` → Next → Finish
+
+7️⃣ **Deploy osTicket**  
+   - Extract osTicket ZIP → copy its **upload** folder to `C:\inetpub\wwwroot` → rename to **osTicket**  
+   ![C:\inetpub\wwwroot\osTicket folder](images/osticket-folder.png)
+
+8️⃣ **Configure IIS & PHP**  
+   - IIS Manager → Default Web Site → osTicket → Browse → confirm installer loads  
+   - PHP Manager → Enable `php_intl.dll` & `php_opcache.dll` → Refresh  
+   ![osTicket setup page in browser](images/osticket-setup.png)
+
+9️⃣ **Secure Config File**  
+   - Rename `include\ost-sampleconfig.php` → `ost-config.php`  
+   - Properties → Security → Disable inheritance → Remove all → Grant Everyone Read only
+
+🔟 **Complete Installation**  
+   - In browser click **Continue** → set Helpdesk name & default email  
+   - Database = **osTicket**, Username = **root**, Password = **Password1** → Install Now!  
+   - Delete `C:\inetpub\wwwroot\osTicket\setup`  
+   - Set `include\ost-config.php` to Read‑only  
+   - Login at http://localhost/osTicket/scp/login.php  
+   ![osTicket installation success screen](images/osticket-success.png)
+
+---
+
+> **Note:** Only capture screenshots at the marked steps — everything else follows straightforward wizard clicks.
+
 
