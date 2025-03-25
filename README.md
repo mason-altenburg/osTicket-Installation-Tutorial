@@ -52,7 +52,8 @@ Next simply connect to your newly created VM using RDP using the public IPv4 add
 4️⃣ **Install PHP 7.3**  
    - Extract `php-7.3.8-Win32-VC15-x86.zip` to `C:\php`  
    - Rename `php.ini-development` → `php.ini`  
-   ![C:\php folder contents](images/php-folder.png)
+   ![image](https://github.com/user-attachments/assets/105b70c1-ca92-4af4-8c0d-6a90e565cd14)
+
 
 5️⃣ **Install PHP Manager for IIS**  
    - Run `PHPManagerForIIS.msi` → Next → Finish
