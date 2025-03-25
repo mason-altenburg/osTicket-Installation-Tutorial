@@ -63,7 +63,8 @@ Next simply connect to your newly created VM using RDP using the public IPv4 add
 
 7️⃣ **Deploy osTicket**  
    - Extract osTicket ZIP → copy its **upload** folder to `C:\inetpub\wwwroot` → rename to **osTicket**  
-   ![C:\inetpub\wwwroot\osTicket folder](images/osticket-folder.png)
+  ![image](https://github.com/user-attachments/assets/25cea5a0-8990-4a98-a37e-acb15092c4fb)
+
 
 8️⃣ **Configure IIS & PHP**  
    - IIS Manager → Default Web Site → osTicket → Browse → confirm installer loads  
