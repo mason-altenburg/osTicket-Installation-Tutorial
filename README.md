@@ -49,7 +49,8 @@ Welcome to my first in-depth IT tutorial! To begin we will have to create a Virt
      - Install as Windows service → Start automatically  
      - Root password = **Password1** → Remove anonymous → Disallow remote root  
      - Execute → Finish  
-   ![MySQL Configuration Complete](images/mysql-config.png)
+   ![sql55 caputre](https://github.com/user-attachments/assets/e2fb84ae-4af0-4e5f-8761-b7724233b4ef)
+
 
 4️⃣ **Install PHP 7.3**  
    - Extract `php-7.3.8-Win32-VC15-x86.zip` to `C:\php`  
