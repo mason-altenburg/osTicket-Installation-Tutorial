@@ -2,7 +2,6 @@
 
 # osTicket – Prerequisites & Installation
 
-This tutorial follows the original format, with screenshots only at key verification points.
 
 ---
 
@@ -25,13 +24,19 @@ This tutorial follows the original format, with screenshots only at key verifica
 - osTicket v1.15.8 ZIP
 
 ---
+Welcome to my first in-depth IT tutorial! To begin we will have to create a Virtual machine using the Microsoft Azure portal(portal.azure.com). We will be using a VM(virtual machine) which is a remote computer. We are using a VM in order to protect our physical machine just in case something malfunctions, and also have a clean slate computer to continually replicate the lab on. Create a resource group and title it "osTicket". Afterwards create a VM with 2-4 CPUs.
+![Aure](https://github.com/user-attachments/assets/f7fb5401-2605-447d-89c4-d14ffc7fb8b8)
+
+---
 
 ## Installation Steps
 
 1️⃣ **Enable IIS**  
    - Control Panel → Programs → Turn Windows features on or off  
-   - Check **Internet Information Services** → OK  
-   ![Windows Features with IIS enabled](images/enable-iis.png)
+   - Check **Internet Information Services** → OK
+   - ![enable-iis](https://github.com/user-attachments/assets/16d31fd3-8c99-44ef-8820-2a2711632863)
+
+
 
 2️⃣ **Install Visual C++ Redistributable**  
    - Run `VC_redist.x86.exe` → Accept license → Install → Finish
