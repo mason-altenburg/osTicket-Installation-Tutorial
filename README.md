@@ -1,11 +1,9 @@
 ![image](https://github.com/user-attachments/assets/eef745f8-7011-47c5-aff3-4a3f05f59e70)
 
-# osTicket – Prerequisites & Installation
-
-
 ---
 
-## Environments & Technologies Used
+## 🛠️ Environments & Technologies Used
+
 - Microsoft Azure VM (Windows 10 Enterprise)
 - Internet Information Services (IIS)
 - MySQL Server 5.5
@@ -15,13 +13,9 @@
 
 ---
 
-## List of Prerequisites
-- Visual C++ Redistributable (`(https://aka.ms/vs/17/release/vc_redist.x86.exe)`)
-- MySQL Server 5.5 (`mysql-5.5.62-win32.msi`)
-- PHP 7.3 ZIP (`php-7.3.8-Win32-VC15-x86.zip`)
-- PHP Manager for IIS (`PHPManagerForIIS.msi`)
-- IIS URL Rewrite (`rewrite_amd64_*.exe`)
-- osTicket v1.15.8 ZIP
+## 📦 All Required Files  
+Everything you need for this project is in the following Google Drive folder:  
+🔗 [Download Everything Here](https://drive.google.com/drive/u/0/folders/1APMfNyfNzcxZC6EzdaNfdZsUwxWYChf6)
 
 ---
 Welcome to my first in-depth IT tutorial! To begin we will have to create a Virtual machine using the Microsoft Azure portal(portal.azure.com). We will be using a VM(virtual machine) which is a remote computer. We are using a VM in order to protect our physical machine just in case something malfunctions, and also have a clean slate computer to continually replicate the lab on. Create a resource group and title it "osTicket". Afterwards create a VM with 2-4 CPUs.
